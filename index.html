@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zhou Ziyi – Portfolio</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #2d3748;
+      --text-light: #718096;
+      --primary: #2c5282;
+      --secondary: #3182ce;
+      --card-bg: #ffffff;
+      --border: #edf2f7;
+      --shadow: 0 8px 24px rgba(0,0,0,0.05);
+      --hover-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      --transition: all 0.3s ease;
+      /* Logo and avatar size */
+      --logo-size: 56px;
+      --avatar-size: 150px;
+    }
+
+    [data-theme="dark"] {
+      --bg: #1a202c;
+      --text: #e2e8f0;
+      --text-light: #a0aec0;
+      --card-bg: #2d3748;
+      --border: #4a5568;
+      --shadow: 0 8px 24px rgba(0,0,0,0.15);
+      --hover-shadow: 0 12px 36px rgba(0,0,0,0.25);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      transition: var(--transition);
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+      padding-bottom: 2rem;
+      position: relative;
+    }
+
+    .avatar-wrapper {
+      width: var(--avatar-size);
+      height: var(--avatar-size);
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+    .avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      box-shadow: var(--shadow);
+      border: 3px solid var(--bg);
+    }
+    .avatar-fallback {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.8rem;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .avatar-wrapper img[alt=""] + .avatar-fallback,
+    .avatar-wrapper img:not([src]) + .avatar-fallback,
+    .avatar-wrapper img[src=""] + .avatar-fallback {
+      opacity: 1;
+    }
+
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    header p {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+    }
+    .contact-info {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-light);
+    }
+    .theme-toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 3.2rem;
+    }
+    .section-title {
+      font-size: 1.65rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.6rem;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 600;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 2.3rem;
+      width: 65px;
+      height: 3px;
+      background: var(--secondary);
+      border-radius: 3px;
+    }
+    .section-title i {
+      color: var(--secondary);
+      font-size: 1.35rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 1.8rem;
+      margin-bottom: 1.6rem;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--hover-shadow);
+    }
+
+    .org-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 0.6rem;
+    }
+    .institution-logo {
+      width: var(--logo-size);
+      height: var(--logo-size);
+      border-radius: 10px;
+      background: var(--bg);
+      padding: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    [data-theme="dark"] .institution-logo {
+      background: var(--card-bg);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .org-name {
+      font-size: 1.18rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .role {
+      font-weight: 600;
+      font-size: 1.22rem;
+      margin-bottom: 0.6rem;
+      color: var(--primary);
+    }
+    .time-range {
+      color: var(--text-light);
+      font-size: 0.96rem;
+      margin-bottom: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .time-range i {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    ul {
+      padding-left: 1.4rem;
+    }
+    li {
+      margin-bottom: 0.65rem;
+      line-height: 1.6;
+    }
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    .competition-list {
+      list-style: none;
+    }
+    .competition-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+    .competition-item:last-child {
+      border-bottom: none;
+    }
+    .comp-contest {
+      font-weight: 600;
+      color: var(--primary);
+      flex: 1;
+      min-width: 200px;
+    }
+    .comp-award {
+      font-weight: 500;
+      color: var(--text);
+    }
+    .comp-date {
+      width: 100%;
+      text-align: right;
+      color: var(--text-light);
+      font-size: 0.92rem;
+      margin-top: 0.3rem;
+    }
+
+    @media (min-width: 768px) {
+      .competition-item {
+        flex-wrap: nowrap;
+      }
+      .comp-date {
+        width: auto;
+        margin-top: 0;
+      }
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1.1rem;
+    }
+    .skill-item {
+      background: var(--bg);
+      padding: 1.1rem 0.6rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      text-align: center;
+      transition: var(--transition);
+    }
+    .skill-item:hover {
+      border-color: var(--secondary);
+    }
+    .skill-icon {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--secondary);
+    }
+    .skill-name {
+      font-size: 0.88rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      border-top: 1px solid var(--border);
+    }
+
+    #back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 48px;
+      height: 48px;
+      background: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+    #back-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 1.5rem 1rem; }
+      :root {
+        --logo-size: 48px;
+        --avatar-size: 130px;
+      }
+      .skill-name { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header data-aos="fade-down">
+      <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+      </div>
+      
+      <div class="avatar-wrapper">
+        <img src="assets/images/avatar.jpg" alt="Zhou Ziyi" class="avatar" onerror="this.style.display='none'">
+        <div class="avatar-fallback">Z</div>
+      </div>
+
+      <h1>Zhou Ziyi</h1>
+      <p>B.Sc. in Statistics | Data Analysis & Visualization | Applied Machine Learning</p>
+      <div class="contact-info">
+        <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Guangzhou, Guangdong</div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> xchou9378@gmail.com</div>
+        <div class="contact-item"><i class="fab fa-github"></i> 
+          <a href="https://github.com/cloudcollection" target="_blank" style="color:inherit; text-decoration: none;">cloudcollection</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title" data-aos="fade-right"><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="card" data-aos="fade-up">
+        <div class="org-header">
+          <img src="https://www.gzhu.edu.cn/images/logo.png" alt="Guangzhou University" class="institution-logo">
+          <div class="org-name">School of Economics and Statistics, Guangzhou University</div>
+        </div>
+        <div class="role">Bachelor of Science in Statistics</div>
+        <div class="time-range"><i class="far fa-calendar-alt"></i> Sep 2022 – Jun 2026 (Expected)</div>
+        <ul>
+          <li>GPA: 3.64/4.0 (Top 10%) | Core Courses: Mathematical Analysis, Advanced Algebra, Probability & Statistics, Data Mining, Statistical Computing, Regression Analysis, Time Series Analysis</li>
+          <li>Honors: First-Class Scholarship, Second-Class Scholarship, Outstanding Student, Outstanding Student Leader, Outstanding Volunteer (20+ awards from university).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects & Internships -->
+    <section class="section">
+      <h2 class="section-title" data-aos="fade-right"><i class="fas fa-briefcase"></i> Projects & Internships</h2>
+      
+      <!-- Tsinghua -->
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <div class="org-header">
+          <img src="assets/logos/tsinghua.png" alt="Tsinghua University" class="institution-logo">
+          <div class="org-name">DataPi, School of Software, Tsinghua University</div>
+        </div>
+        <div class="role">Content & Translation Contributor</div>
+        <div class="time-range"><i class="far fa-calendar-alt"></i> Apr 2025 – Present</div>
+        <ul>
+          <li>Translated and authored technical articles on cutting-edge AI topics; independently produced the Chinese version of “Understanding Transformers with Visualizations,” which garnered 2,000+ views and 400+ shares—among the most widely read pieces in the team.</li>
+          <li>Published multiple translated blogs including “Layer-by-Layer Transformer Breakdown,” “AI Agents at Five Difficulty Levels,” and “Multi-Armed Bandits: A Primer for Reinforcement Learning,” deepening my understanding of data science while promoting knowledge sharing in the Chinese-speaking community.</li>
+          <li>Used clear explanations and visual aids to demystify complex models, lowering barriers to entry for learners and practitioners.</li>
+        </ul>
+      </div>
+
+      <!-- Cainiao -->
+      <div class="card" data-aos="fade-up">
+        <div class="org-header">
+          <img src="assets/logos/cainiao.png" alt="Cainiao Network" class="institution-logo">
+          <div class="org-name">Cainiao Network (Alibaba Group) – Cross-border Consolidation Channel</div>
+        </div>
+        <div class="role">Operations Trainee</div>
+        <div class="time-range"><i class="far fa-calendar-alt"></i> Jan 2026 – Mar 2026</div>
+        <ul>
+          <li>Participated in Cainiao’s cross-border e-commerce logistics online practice program under Alibaba ecosystem, systematically studying international logistics workflows and digital operations logic.</li>
+          <li>Completed tasks including user behavior analysis, competitive strategy research, and new media content planning, applying statistical thinking to real-world business scenarios.</li>
+          <li>Used Excel for basic data cleaning and visualization, combined with user personas to propose optimization suggestions, deepening understanding of “data-driven decision making.”</li>
+        </ul>
+      </div>
+
+       <!-- Zhongyan Tech (WJX) -->
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <div class="org-header">
+          <img src="assets/logos/wjx.png" alt="Wenjuan Wang (Zhongyan Tech)" class="institution-logo">
+          <div class="org-name">Zhongyan Technology Co., Ltd. (Wenjuan Wang / Questionnaire Network)</div>
+        </div>
+        <div class="role">Data Analysis Assistant</div>
+        <div class="time-range"><i class="far fa-calendar-alt"></i> Jul 2025 – Sep 2025</div>
+        <ul>
+          <li>Participated in writing the official SPSSPRO textbook, completing end-to-end projects on customer behavior analysis, credit rating, and user profiling—from data cleaning and feature engineering to modeling and visual reporting.</li>
+          <li>Implemented multivariate statistical analyses on the SPSSPRO platform, including PCA, K-Means clustering, regression, and Apriori association rule mining.</li>
+          <li>Applied descriptive statistics, PCA, clustering, and discriminant analysis to deliver actionable insights, strengthening my ability to close the loop from statistical theory to business impact.</li>
+        </ul>
+      </div>
+
+      <!-- Foshan Ancestral Temple -->
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <div class="org-header">
+          <img src="assets/logos/fszm.png" alt="Foshan Ancestral Temple Museum" class="institution-logo">
+          <div class="org-name">Foshan Ancestral Temple Museum – Planning & Promotion Dept.</div>
+        </div>
+        <div class="role">Data Analysis & Research Assistant</div>
+        <div class="time-range"><i class="far fa-calendar-alt"></i> Nov 2024 – Apr 2025</div>
+        <ul>
+          <li>Contributed to the Foshan Social Science Federation project “Revitalizing Foshan’s Cultural Economy through the Leung Shi (Lion Dance) IP,” aiming to boost cultural-tourism integration via intangible cultural heritage.</li>
+          <li>Supported end-to-end public perception research—including survey design, field distribution (800+ responses), and expert interviews.</li>
+          <li>Performed data cleaning, visualization, and statistical modeling in Python, R, and SPSS using clustering, logistic regression, and factor analysis to uncover audience awareness, preferences, and engagement willingness toward Foshan Lion Dance culture.</li>
+          <li>Co-authored the report “Lion Spirit Ignites Heritage, Intangible Culture Forges New Paths: Inheritance and Diversified Promotion of Foshan Ancestral Temple Lion Dance,” proposing data-backed strategies for segmented outreach and youth-oriented promotion, informing the museum’s communication strategy.</li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Campus Activities -->
+    <section class="section">
+      <h2 class="section-title" data-aos="fade-right"><i class="fas fa-school"></i> Campus Involvement</h2>
+      <div class="card" data-aos="fade-up">
+        <div class="org-header">
+          <div class="org-name">Youth Volunteer Association, School of Economics and Statistics</div>
+        </div>
+        <div class="role">Deputy Head of Publicity</div>
+        <div class="time-range"><i class="far fa-calendar-alt"></i> Sep 2023 – Jul 2024</div>
+        <ul>
+          <li>Led integrated publicity campaigns for campus and community service initiatives, reaching over 10,000 beneficiaries through online and offline channels.</li>
+          <li>Managed the official WeChat account and designed promotional materials (posters, videos, articles), publishing 20+ posts that significantly boosted event participation and institutional visibility.</li>
+        </ul>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <div class="org-header">
+          <div class="org-name">Class Statistics 222 (Innovation Track)</div>
+        </div>
+        <div class="role">Organizing & Publicity Officer</div>
+        <div class="time-range"><i class="far fa-calendar-alt"></i> Sep 2023 – Present</div>
+        <ul>
+          <li>Organized 10+ themed group activities and grassroots leadership programs (“Qian Qian Project”), strengthening class cohesion and ideological engagement.</li>
+          <li>Ran the class WeChat official account—handling content planning, typesetting, and publishing—delivering 20+ original posts as the primary channel for class communication and showcase.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Competitions -->
+    <section class="section">
+      <h2 class="section-title" data-aos="fade-right"><i class="fas fa-trophy"></i> Competitions</h2>
+      <div class="card" data-aos="fade-up">
+        <ul class="competition-list">
+          <li class="competition-item">
+            <span class="comp-contest">MCM/ICM (Mathematical Contest in Modeling)</span>
+            <span class="comp-award">Honorable Mention (International)</span>
+            <span class="comp-date">May 2025</span>
+          </li>
+          <li class="competition-item">
+            <span class="comp-contest">Zhengda Cup National Market Research Competition</span>
+            <span class="comp-award">National First Prize</span>
+            <span class="comp-date">May 2025</span>
+          </li>
+          <li class="competition-item">
+            <span class="comp-contest">National Business Elite Challenge (Culture & MICE Track)</span>
+            <span class="comp-award">National First Prize</span>
+            <span class="comp-date">Nov 2025</span>
+          </li>
+          <li class="competition-item">
+            <span class="comp-contest">China Undergraduate Mathematical Contest in Modeling</span>
+            <span class="comp-award">Provincial Second Prize (Guangdong)</span>
+            <span class="comp-date">Dec 2024</span>
+          </li>
+          <li class="competition-item">
+            <span class="comp-contest">National Statistical Modeling Competition</span>
+            <span class="comp-award">Provincial Second Prize (Guangdong)</span>
+            <span class="comp-date">Jul 2024</span>
+          </li>
+          <li class="competition-item">
+            <span class="comp-contest">Blue Bridge Cup (Software & IT Talent Competition)</span>
+            <span class="comp-award">Provincial Third Prize (Guangdong)</span>
+            <span class="comp-date">Apr 2024</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2 class="section-title" data-aos="fade-right"><i class="fas fa-code"></i> Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fab fa-python"></i></div><div class="skill-name">Python</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fab fa-r-project"></i></div><div class="skill-name">R</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fas fa-calculator"></i></div><div class="skill-name">Matlab</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fas fa-database"></i></div><div class="skill-name">SQL</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fas fa-chart-bar"></i></div><div class="skill-name">SPSS</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="far fa-file-excel"></i></div><div class="skill-name">Excel</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="far fa-file-powerpoint"></i></div><div class="skill-name">PowerPoint</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fas fa-sitemap"></i></div><div class="skill-name">Xmind</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fas fa-book"></i></div><div class="skill-name">EndNote</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fas fa-file-code"></i></div><div class="skill-name">LaTeX</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fab fa-markdown"></i></div><div class="skill-name">Markdown</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fas fa-chart-line"></i></div><div class="skill-name">Origin</div></div>
+        <div class="skill-item" data-aos="zoom-in"><div class="skill-icon"><i class="fas fa-globe-americas"></i></div><div class="skill-name">ArcGIS</div></div>
+      </div>
+    </section>
+
+    <footer data-aos="fade-up">
+      <p>© 2026 Zhou Ziyi | Personal Portfolio | Updated Jan 2026</p>
+    </footer>
+  </div>
+
+  <div id="back-to-top" title="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    const themeToggle = document.getElementById('themeToggle');
+    const icon = themeToggle.querySelector('i');
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      icon.className = 'fas fa-sun';
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      document.documentElement.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('show', window.scrollY > 400);
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
