@@ -349,6 +349,128 @@
       .skill-name { font-size: 0.82rem; }
     }
   </style>
+
+  <style>
+/* 👇 在你现有 CSS 的最后，替换或追加以下媒体查询 */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1.5rem 1rem;
+    max-width: 100%;
+  }
+
+  /* 头像和标题 */
+  :root {
+    --avatar-size: 120px; /* 手机上稍小 */
+  }
+  h1 {
+    font-size: 1.9rem;
+    line-height: 1.3;
+  }
+  header p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .contact-info {
+    gap: 0.8rem;
+    flex-direction: column; /* 垂直排列，避免拥挤 */
+    align-items: center;
+  }
+  .contact-item {
+    font-size: 0.95rem;
+  }
+
+  /* 节标题 */
+  .section-title {
+    font-size: 1.5rem;
+    gap: 0.6rem;
+  }
+  .section-title::after {
+    left: 2rem;
+    width: 50px;
+  }
+
+  /* 卡片内组织信息 */
+  .org-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .institution-logo {
+    width: 56px;
+    height: 56px;
+  }
+  .org-name {
+    font-size: 1.05rem;
+  }
+  .role {
+    font-size: 1.15rem;
+  }
+  .time-range {
+    font-size: 0.92rem;
+  }
+
+  /* 列表间距 */
+  li {
+    margin-bottom: 0.75rem;
+    font-size: 0.98rem;
+    line-height: 1.65;
+  }
+
+  /* 竞赛列表：手机上垂直堆叠 */
+  .competition-item {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 4px !important;
+    padding: 0.8rem 0;
+  }
+  .comp-contest, .comp-award, .comp-date {
+    text-align: left !important;
+    width: 100% !important;
+  }
+  .comp-date {
+    margin-top: 0.2rem !important;
+    opacity: 0.85;
+  }
+
+  /* 技能网格：每行 3~4 个 */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+    gap: 0.9rem;
+  }
+  .skill-item {
+    padding: 0.9rem 0.4rem;
+  }
+  .skill-name {
+    font-size: 0.78rem;
+  }
+
+  /* 返回顶部按钮位置微调 */
+  #back-to-top {
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* 📱 平板优化 (768px ~ 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    padding: 2rem 1.2rem;
+  }
+  :root {
+    --logo-size: 52px;
+    --avatar-size: 140px;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  }
+  .org-header {
+    gap: 14px;
+  }
+}
+</style>
 </head>
 <body>
   <div class="container">
