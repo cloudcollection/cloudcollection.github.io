@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.DS_Store
+
+.claude/
+downloaded-skills/
+tmp_*.txt
