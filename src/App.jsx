@@ -86,7 +86,7 @@ const experiences = [
   {
     organization: "The Hong Kong University of Science and Technology (Guangzhou)",
     role: "Research Assistant, geospatial data processing",
-    dates: "Apr 2026 - Present",
+    dates: "Jul 2026 - Present",
     category: "Research and analytics",
     logo: "/assets/logos/hkust-gz.png",
     logoTone: "dark",
@@ -112,7 +112,7 @@ const experiences = [
   {
     organization: "Zhongyan Technology",
     role: "Data Analysis Assistant",
-    dates: "Jun 2025 - Sep 2025",
+    dates: "Sep 2025",
     category: "Research and analytics",
     logo: "/assets/logos/wjx-new.png",
     points: [
@@ -331,7 +331,7 @@ function App() {
               <h2>Ziyi ZHOU</h2>
               <p>B.Sc. in Statistics, Guangzhou University</p>
               <dl className="facts">
-                <div><dt>GPA</dt><dd>3.64 / 4.0, Top 10%</dd></div>
+                <div><dt>GPA</dt><dd>3.64 / 4.00; 6 / 77, Top 8%</dd></div>
                 <div><dt>Focus</dt><dd>Applied statistics and data science</dd></div>
                 <div><dt>Location</dt><dd>Guangzhou, Guangdong</dd></div>
               </dl>
@@ -466,9 +466,9 @@ function App() {
                 <img className="education-logo compact-education-logo" src="/assets/logos/gzhu-2026.png" alt="Guangzhou University logo" />
               </div>
               <dl className="education-facts compact-education-facts">
-                <div><dt>GPA</dt><dd>3.64 / 4.0</dd></div>
-                <div><dt>Rank</dt><dd>Top 10%</dd></div>
-                <div><dt>Focus</dt><dd>Applied statistics</dd></div>
+                <div><dt>GPA</dt><dd>3.64 / 4.00</dd></div>
+                <div><dt>Average</dt><dd>90.16 / 100</dd></div>
+                <div><dt>Rank</dt><dd>6 / 77, Top 8%</dd></div>
               </dl>
               <div className="coursework-block">
                 <p className="mini-label">Core coursework</p>
@@ -483,7 +483,6 @@ function App() {
               <ul>
                 <li><strong>MCM/ICM</strong><span>Honorable Mention, May 2025</span></li>
                 <li><strong>Market Survey and Analysis Competition</strong><span>National First Prize, May 2025</span></li>
-                <li><strong>Business Elite Challenge</strong><span>National Second Prize, Nov 2025</span></li>
                 <li><strong>Mathematical Modeling Competition</strong><span>Guangdong Second Prize, Dec 2024</span></li>
                 <li><strong>Statistical Modeling Competition</strong><span>Guangdong Second Prize, Jul 2024</span></li>
                 <li><strong>Lanqiao Cup</strong><span>Guangdong Third Prize, Apr 2024</span></li>
@@ -515,7 +514,7 @@ function App() {
 
       <footer className="footer">
         <div className="shell footer-inner">
-          <span>Copyright 2026 Ziyi ZHOU. Academic portfolio.</span>
+          <span>Copyright 2026 Ziyi ZHOU. Academic portfolio. Updated Jul 2026.</span>
           <span><a href="mailto:XiaoZhou_013@outlook.com">XiaoZhou_013@outlook.com</a> / <a href="https://github.com/cloudcollection" target="_blank" rel="noreferrer">github.com/cloudcollection</a> / <a href="https://blog.csdn.net/2401_83712180?spm=1000.2115.3001.5343" target="_blank" rel="noreferrer">CSDN Blog</a></span>
         </div>
       </footer>
