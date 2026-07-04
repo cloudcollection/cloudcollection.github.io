@@ -207,7 +207,7 @@ function SplitReveal({ text }) {
     <span className="split-reveal" aria-label={text}>
       {words.map((word, index) => (
         <span className="word-wrap" aria-hidden="true" key={`${word}-${index}`}>
-          <span className="word" style={{ "--delay": `${index * 38}ms` }}>{word}</span>{index < words.length - 1 ? " " : ""}
+          <span className="word" style={{ "--delay": `${index * 38}ms` }}>{word}</span>
         </span>
       ))}
     </span>

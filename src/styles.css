@@ -1861,3 +1861,15 @@ h3,
     line-height: 1.14;
   }
 }
+
+/* Keep animated hero words visibly separated across browsers and copied states. */
+.hero h1 .split-reveal {
+  display: inline-flex;
+  flex-wrap: wrap;
+  column-gap: 0.18em;
+  row-gap: 0.04em;
+}
+
+.hero h1 .word-wrap {
+  margin-right: 0;
+}
