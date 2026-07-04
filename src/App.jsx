@@ -479,11 +479,11 @@ function App() {
             </SpotlightCard>
             <SpotlightCard className="education-card recognition-card compact-recognition-card">
               <p className="project-type">Recognition</p>
-              <h3>Selected competitions and scholarships</h3>
+              <h3>Selected awards and scholarships</h3>
               <ul>
                 <li><strong>MCM/ICM</strong><span>Honorable Mention, May 2025</span></li>
                 <li><strong>Market Survey and Analysis Competition</strong><span>National First Prize, May 2025</span></li>
-                <li><strong>Business Elite Challenge</strong><span>National Second Prize, Nov 2025</span></li>
+                <li><strong>Business Elite Challenge Competition</strong><span>National Second Prize, Nov 2025</span></li>
                 <li><strong>Mathematical Modeling Competition</strong><span>Guangdong Second Prize, Dec 2024</span></li>
                 <li><strong>Statistical Modeling Competition</strong><span>Guangdong Second Prize, Jul 2024</span></li>
                 <li><strong>Lanqiao Cup</strong><span>Guangdong Third Prize, Apr 2024</span></li>
