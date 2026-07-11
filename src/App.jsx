@@ -39,14 +39,14 @@ const projects = [
     methods: ["Survey design", "Clustering", "Logistic Regression", "Factor Analysis", "Report writing"]
   },
   {
-    title: "UNESCO Heritage Boundary Data Processing",
-    type: "Reproducible data engineering",
-    summary: "A supporting geospatial data project focused on source verification, boundary retrieval, coordinate validation, and reusable GeoJSON packaging.",
-    situation: "Heritage-site boundary data often lacks clean, directly reusable polygons across public sources.",
-    action: "Checked source reliability, retrieved boundaries, validated coordinates, and packaged outputs with provenance notes.",
-    result: "Built evidence for careful data engineering, spatial validation, and reproducible research support.",
-    evidence: ["Source reliability checks", "Coordinate validation", "Provenance notes"],
-    methods: ["Web crawling", "GeoJSON", "GIS validation", "Spatial cleaning", "Coordinate matching"]
+    title: "Global World Heritage Spatial Database Construction",
+    type: "Research data engineering",
+    summary: "A geospatial data engineering project that constructs a reproducible World Heritage spatial database through multi-source integration, boundary extraction, validation, and metadata harmonization.",
+    situation: "World Heritage spatial research depends on fragmented records across UNESCO pages, ArcGIS services, national GIS portals, OpenStreetMap, and official documents.",
+    action: "Engineered workflows for source discovery, ArcGIS REST/FeatureServer extraction, multilingual entity matching, schema harmonization, and GeoJSON packaging.",
+    result: "Built an analysis-ready research data foundation with 2,000+ validated core-zone polygons, linked metadata, and provenance records for downstream spatial analysis.",
+    evidence: ["2,000+ core-zone polygons", "ArcGIS FeatureServer extraction", "Metadata and provenance records"],
+    methods: ["Python", "ArcGIS REST API", "GeoJSON", "Entity matching", "Data QA", "PDF parsing"]
   }
 ];
 
@@ -85,16 +85,16 @@ const modelingPapers = [
 const experiences = [
   {
     organization: "The Hong Kong University of Science and Technology (Guangzhou)",
-    role: "Research Assistant, geospatial data processing",
+    role: "Research Assistant - Geospatial Data Engineering & Research Data Infrastructure",
     dates: "Jul 2026 - Present",
     category: "Research and analytics",
     logo: "/assets/logos/hkust-gz.png",
     logoTone: "dark",
     logoShape: "fill",
     points: [
-      "Task: Support a research workflow where heritage-site spatial data required source verification and reusable boundary packages.",
-      "Action: Processed structured geospatial materials, checked source reliability, validated coordinates, and organized reproducible GeoJSON outputs.",
-      "Result: Improved data traceability and reduced ambiguity in research-support materials for downstream spatial analysis."
+      "Task: Build a reproducible geospatial data infrastructure for World Heritage research from fragmented UNESCO pages, ArcGIS services, national GIS portals, OpenStreetMap, and official documents.",
+      "Action: Designed data discovery, ArcGIS REST/FeatureServer extraction, metadata parsing, multilingual entity matching, schema harmonization, GeoJSON packaging, and spatial QA workflows.",
+      "Result: Produced an analysis-ready research dataset with 2,000+ validated core-zone polygons, linked metadata, provenance records, and quality checks for downstream spatial analysis."
     ]
   },
   {
