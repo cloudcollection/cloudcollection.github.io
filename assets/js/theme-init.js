@@ -1,0 +1,1 @@
+(()=>{let t='system';try{t=new URLSearchParams(location.search).get('theme')||localStorage.getItem('zhou-strict-theme')||'system'}catch{}if(!['light','dark','system'].includes(t))t='system';document.documentElement.dataset.theme=t==='system'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):t;document.documentElement.dataset.preference=t})();
